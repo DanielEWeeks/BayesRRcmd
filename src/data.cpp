@@ -487,7 +487,7 @@ void Data::preprocessCSVFile(const string&csvFile,const string &preprocessedCSVF
       while (std::getline(lineStream, cell, ','))
 	{
 	  if (!cell.empty())
-	    snpData[++cols]=std::stod(cell);
+	    snpData[cols++]=std::stod(cell);
 	  else
 	    throw("Error, there are missing values in the file");
 	}
@@ -561,7 +561,7 @@ void Data::readCSVPhenFile( const string &csvFile)
    while (std::getline(lineStream, cell, ',') && cols<numInds)
    {
        if (!cell.empty())
-           y[++cols]= std::stof(cell);
+           y[cols++]= std::stof(cell);
        else
            throw("Error, there are missing values in the file");
 
